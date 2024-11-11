@@ -28,8 +28,8 @@ if(!empty($_POST)){
 </head>
 <body>
     <form method="POST">
-        <input type="text" name="username">
-        <input type="password" name="password">
+        <input required type="text" name="username" placeholder="nome de usuário">
+        <input required type="password" name="password" placeholder="senha">
         
         <button type="submit">LogIn</button>
     </form>

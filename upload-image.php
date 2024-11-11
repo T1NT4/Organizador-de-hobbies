@@ -16,7 +16,7 @@ $tamanho_arquivo = $imagem_arquivo['size'];
 $extensao = strtolower(pathinfo($arquivo, PATHINFO_EXTENSION));
 
 // Define o caminho final do arquivo
-$caminho_final = $diretorio . basename($_POST['username'].".png");
+$caminho_final = $diretorio . basename($username.".png");
 $nome_arquivo_fotoperfil = str_replace("View/fotos_de_perfil/","",$caminho_final);
 // Verifica se o arquivo é uma imagem e seu tamanho é permitido (5MB no exemplo)
 $tipos_permitidos = ['jpg', 'jpeg', 'png'];

@@ -14,9 +14,9 @@ if(!empty($_POST)){
     include __DIR__.'/upload-image.php';
 
     $cadastrou = $Controller->cadastrarConta($username,$password, $data_de_registro,$nome_arquivo_fotoperfil);
-    echo $cadastrou;
     $error_code = 0;
-    if($cadastrou && $error_code != null){
+
+    if($cadastrou && $error_code == null){
         header("Location: login.php");
     }
 }
@@ -31,8 +31,9 @@ if(!empty($_POST)){
 </head>
 <body>
     <form method="POST" enctype="multipart/form-data">
-    <input type="text" name="username">
-    <input type="password" name="password">
+    <input required type="text" name="username" placeholder="nome de usuário">
+    <input required type="password" name="password" placeholder="senha">
+    <label for="foto-perfil">foto de perfil (opcional): </label>
     <input type="file" name="foto-perfil" accept="image/jpg, image/jpeg, image/png">
     
     <button type="submit">LogIn</button>
@@ -41,12 +42,12 @@ if(!empty($_POST)){
         if(isset($cadastrou) && !$cadastrou){
             echo"<p>esse usuário ja existe! tente outro nome de usuário.</p>";
         }
-        if($error_code != null){
+        if(isset($error_code) && $error_code != null){
             echo $error_code;
         }
     ?>
     <p>
-        Já tem uma conta? faça login 
+        Já tem uma conta? <a href="login.php">faça login</a> 
     </p>
 </body>
 </html>

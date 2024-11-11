@@ -15,6 +15,12 @@ class LoginController{
     public function listarContaPorID($id_user) {
         return $this->LoginModel->listarContaPorID($id_user);
     }
+    public function confirmarSenha($username,$password){
+        return $this->LoginModel->confirmarSenha($username,$password);
+    }
+    public function updateUser($id_user,$password){
+        return $this->LoginModel->updateUser($id_user,$password);
+    }
     public function logIn($username, $password){
         return $this->LoginModel->logIn($username,$password);
     }

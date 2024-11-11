@@ -31,6 +31,17 @@ class LoginModel{
         $stmt->execute([$id_user]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
     }
+    public function confirmarSenha($username,$password){
+        $sql = "SELECT * FROM contas WHERE username = ? AND password = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$username, $password]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function updateUser($id_user,$password){
+        $sql = "UPDATE contas SET password = ? WHERE id_user = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$password,$id_user]);
+    }
     public function logIn($username, $password){
         $sql = "SELECT * FROM contas WHERE username = ? AND password = ?";
         $stmt = $this->pdo->prepare($sql);
