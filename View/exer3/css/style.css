@@ -1,0 +1,90 @@
+*{
+    margin:0;
+    padding: 0;
+}
+header{
+    background-color: whitesmoke;
+    font-family: verdana;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+header a{
+    color: black;
+}
+body{
+    background-color: cornflowerblue;
+    min-height: 100vh;
+}
+section{
+    max-width: 1000px;
+    margin: 0   auto;
+    color:whitesmoke;
+    font-family: verdana;
+    margin-top: 20px;
+}
+form{
+    color:black;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+}
+.profile-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.5rem;
+}
+.profile-pic{
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background:rgb(208, 208, 208);
+    border: 10px solid gray;
+    overflow: hidden;
+}
+.planos, .treinos{
+    display: flex;
+    flex-direction: column;
+    gap:1.25rem;
+    padding-top:1.25rem;
+}
+.plano, .treino{
+    background-color: whitesmoke;
+    box-shadow: 0 5px 10px #0000005f;
+    padding:5px;
+    border-radius: 5px;
+    color:black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.treino div{
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+    align-items: flex-end;
+}
+.treino figure{
+    min-width: 125px;
+    min-height: 125px;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+form:has(.parece-com-a){
+    padding: 0;
+}
+.parece-com-a{
+    appearance: none;
+    border:none;
+    font-size: 16px;
+    background: none;
+    text-decoration: underline;
+    cursor:pointer;
+    padding: 0;
+    margin:0
+}
