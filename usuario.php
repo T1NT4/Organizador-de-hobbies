@@ -22,5 +22,6 @@ $user = $Controller->listarContaPorID($id_user);
 
     <a href="mudar-foto-perfil.php">mudar foto de perfil</a>
     <a href="mudar-senha.php">mudar senha</a>
+    <a href="logout.php">sair da conta</a>
 </body>
 </html>
