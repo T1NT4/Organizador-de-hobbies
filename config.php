@@ -3,7 +3,7 @@
 //Configurações básicas
 
 $host = 'localhost';
-$dbname = 'atividadesseminternet';
+$dbname = 'organizadordehobbies';
 $username = 'root';
 $password = '';
 
