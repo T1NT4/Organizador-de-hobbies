@@ -21,6 +21,6 @@ $user = $Controller->listarContaPorID($id_user);
     <p><b>nome de usuário: </b><?=$user['username']?></p>
 
     <a href="mudar-foto-perfil.php">mudar foto de perfil</a>
-    <a href="mudar-senna.php">mudar senha</a>
+    <a href="mudar-senha.php">mudar senha</a>
 </body>
 </html>

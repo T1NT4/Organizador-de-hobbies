@@ -36,7 +36,7 @@ if(!empty($_POST)){
     <label for="foto-perfil">foto de perfil (opcional): </label>
     <input type="file" name="foto-perfil" accept="image/jpg, image/jpeg, image/png">
     
-    <button type="submit">LogIn</button>
+    <button type="submit">Cadastrar Conta</button>
     </form>
     <?php
         if(isset($cadastrou) && !$cadastrou){

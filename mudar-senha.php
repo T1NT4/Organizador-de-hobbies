@@ -13,18 +13,14 @@ if(!isset($user)){
 if(!empty($_POST)){
     $username = $user['username'];
     $password = $_POST['password'];
+    $new_password = $_POST['new_password'];
     
     $senhaconfirmada = $Controller->confirmarSenha($username,$password);
 
     if(!empty($senhaconfirmada)){
-        $imagem_arquivo = $_FILES['foto-perfil'];
-        include __DIR__.'/upload-image.php';
-    
-        $error_code = 0;
+        $Controller->updateUser($id_user,$new_password);
 
-        if($error_code == null){
-            header("Location: usuario.php");
-        }
+        header("Location: usuario.php");
     }
 
 }
@@ -40,17 +36,13 @@ if(!empty($_POST)){
 <body>
     <form method="POST" enctype="multipart/form-data">
     <input required type="password" name="password" placeholder="confirme a senha">
-    <label for="foto-perfil">nova foto de perfil: </label>
-    <input required type="file" name="foto-perfil" accept="image/jpg, image/jpeg, image/png">
-    
-    <button type="submit">Atualizar foto de perfil</button>
+    <input required type="password" name="new_password" placeholder="digite a nova senha">
+
+    <button type="submit">Atualizar senha</button>
     </form>
     <?php
         if(!empty($_POST)){
-            echo"<p>errou a senha! tente novamente.</p>";
-        }
-        if(isset($error_code) && $error_code != null){
-            echo $error_code;
+            echo"<p>Você errou sua senha atual! tente novamente.</p>";
         }
     ?>
 </body>
