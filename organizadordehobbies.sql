@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/11/2024 às 19:30
+-- Tempo de geração: 14/11/2024 às 17:52
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -40,8 +40,8 @@ CREATE TABLE `contas` (
 --
 
 INSERT INTO `contas` (`id_user`, `username`, `password`, `data_de_registro`, `nome_arquivo_fotoperfil`) VALUES
-(11, 't1nt4', '123', '2024-11-11 19:00:54', 't1nt4.png'),
-(12, 'Thiago', '123', '2024-11-11 19:01:31', 'Thiago.png');
+(15, 't1nt4', '123', '2024-11-14 17:14:43', 't1nt4.png'),
+(16, 'Thiago', '123', '2024-11-14 17:15:23', 'Thiago.png');
 
 -- --------------------------------------------------------
 
@@ -51,10 +51,19 @@ INSERT INTO `contas` (`id_user`, `username`, `password`, `data_de_registro`, `no
 
 CREATE TABLE `hobbies` (
   `id_hobbie` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `descricao` text NOT NULL,
   `proficiencia` enum('Curioso','Iniciante','Praticante','Avançado') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `hobbies`
+--
+
+INSERT INTO `hobbies` (`id_hobbie`, `id_user`, `nome`, `descricao`, `proficiencia`) VALUES
+(0, 15, 'Thiago', '123', 'Praticante'),
+(0, 16, 'Um novo hobby', '123', 'Praticante');
 
 -- --------------------------------------------------------
 
@@ -95,13 +104,13 @@ ALTER TABLE `metas`
 -- AUTO_INCREMENT de tabela `contas`
 --
 ALTER TABLE `contas`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `metas`
 --
 ALTER TABLE `metas`
-  MODIFY `id_meta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_meta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
