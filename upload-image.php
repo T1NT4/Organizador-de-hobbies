@@ -25,8 +25,6 @@ $extensao = strtolower(pathinfo($caminho_final, PATHINFO_EXTENSION));
 $error_code = null;
 
 if (in_array($extensao, $tipos_permitidos)) {
-    if ($tamanho_arquivo <= 5000000) { // Limite de 5MB
-        // Faz o upload do arquivo
         if (move_uploaded_file($caminho_temporario, $caminho_final)) {
             // echo "Upload bem-sucedido! Imagem salva em: $caminho_final";
             echo "";
@@ -34,9 +32,6 @@ if (in_array($extensao, $tipos_permitidos)) {
             $error_code = "Erro ao fazer o upload do arquivo.";
         }
     } else {
-        $error_code = "O arquivo é muito grande. O limite é de 5MB.";
-    }
-} else {
     $error_code = "Tipo de arquivo não permitido. Somente JPG, JPEG, PNG e GIF são aceitos.";
 }
 ?>
