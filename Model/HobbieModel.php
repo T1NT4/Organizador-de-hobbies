@@ -22,9 +22,33 @@ class HobbieModel{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     function pegarMetas($id_hobbie){
-        $sql = "SELECT * FROM metas WHERE id_hobbie = ?";
+        $sql = "SELECT * FROM metas WHERE id_hobbie = ? ORDER BY completada DESC ,prazo ASC";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$id_hobbie]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    function updateHobbie($id_hobbie,$proficiencia){
+        $sql = "UPDATE hobbies SET proficiencia = ? WHERE id_hobbie = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$proficiencia,$id_hobbie]);
+    }
+    function updateMeta($id_meta,$completada){
+        $sql = "UPDATE metas SET completada = ? WHERE id_meta = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$completada,$id_meta]);
+    }
+    function deletarHobbie($id_hobbie){
+        $sql = "DELETE FROM hobbies WHERE id_hobbie = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id_hobbie]);
+
+        $sql = "DELETE FROM metas WHERE id_hobbie = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id_hobbie]);
+    }
+    function deletarMeta($id_meta){
+        $sql = "DELETE FROM metas WHERE id_meta = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id_meta]);
     }
 }

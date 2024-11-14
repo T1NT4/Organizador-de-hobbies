@@ -13,8 +13,44 @@ if(!isset($_COOKIE['id_user'])){
 $hobbies = $HobbieController->pegarHobbies($_COOKIE['id_user']);
 
 if(!empty($_POST)){
+    // Criar hobby
     if($_POST['operacao'] == "criar_hobbie"){
         $HobbieController->criarHobbie($_COOKIE['id_user'],$_POST['nome'],$_POST['descricao'],$_POST['proficiencia']);
+        header("location: #");
+    }
+    // Mudar proficiencia para um hobby
+    if(str_contains($_POST['operacao'],'mudar_proficiencia_')){
+        $id_hobbie = str_replace('mudar_proficiencia_','', $_POST['operacao']);
+        $HobbieController->updateHobbie($id_hobbie,$_POST['proficiencia']);
+        header("location: #");
+    }
+    // criar meta para um hobby
+    if(str_contains($_POST['operacao'],'criar_meta_')){
+        $id_hobbie = str_replace('criar_meta_','', $_POST['operacao']);
+        $HobbieController->criarMeta($_POST['nome'],$_POST['descricao'],$_POST['prazo'],"Não");
+        header("location: #");
+    }
+    // mudar status da meta
+    if(str_contains($_POST['operacao'],'mudar_completada_')){
+        $id_meta = str_replace('mudar_completada_','', $_POST['operacao']);
+        $completada = "Não";
+        if(isset($_POST['completada'])){
+            $completada = "Sim";
+        }
+        $HobbieController->updateMeta($id_meta,$completada);
+        header("location: #");
+    }
+
+    // Deletar um hobby
+    if(str_contains($_POST['operacao'],'deletar_hobbie_')){
+        $id_hobbie = str_replace('deletar_hobbie_','', $_POST['operacao']);
+        $HobbieController->deletarHobbie($id_hobbie,);
+    }
+    // Deletar uma meta
+    if(str_contains($_POST['operacao'],'deletar_meta_')){
+        $id_meta = str_replace('deletar_meta_','', $_POST['operacao']);
+        $HobbieController->deletarMeta($id_meta,);
+        header("location: #");
     }
 }
 ?>
@@ -40,23 +76,21 @@ if(!empty($_POST)){
             justify-content: space-between;
         }
 
-        i{
-            font-size: 15px;
-        }
+        
         #criar_hobbie{
             border:none;
             appearance: none;
             width: 40px;
             height: 40px;
-            margin-right:-100%;
             position: absolute;
-            transform: translateX(-15%) translateY(-10%);
+            cursor: pointer;
+            transform: translateX(-15%) translateY(-10%);#?
         }
         form.hobbie{
             display: none;
         }
         div:has(#criar_hobbie) i{
-            font-size: 40px;
+            font-size: 30px;
         }
         body:has(#criar_hobbie:checked) form.hobbie{
             display: flex;
@@ -68,18 +102,40 @@ if(!empty($_POST)){
         .criar_meta{
             border:none;
             appearance: none;
-            width: 20px;
-            height: 20px;
-            margin-right:-100%;
+            width: 35px;
+            height: 35px;
+            margin:0;
+            cursor: pointer;
             position: absolute;
-            transform: translateX(-15%) translateY(-10%);
         }
-        form.hobbie{
+        form.meta{
             display: none;
         }
-        
-        body:has(#criar_hobbie:checked) form.hobbie{
+        div:has(.criar_meta) i{
+            font-size: 30px;
+        }
+        .hobbie:has(.criar_meta:checked) form.meta{
             display: flex;
+        }
+        button:has(.delete){
+            appearance: none;
+            border:none;
+            background: none;
+            cursor: pointer;
+        }
+        .delete{
+            font-size:20px !important;
+        }
+        .add{
+            border:2px solid black;
+            border-radius: 100%;
+            padding: 5px;
+            height: 35px;
+            width: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -89,7 +145,7 @@ if(!empty($_POST)){
     include __DIR__ . "/View/perfil.php";
     ?>
 
-    <h1>hobbies</h1><div><input type="checkbox" id="criar_hobbie"><i class="fa-solid fa-plus"></i></div>
+    <h1>hobbies</h1><div class="add"><input type="checkbox" id="criar_hobbie"><i class="fa-solid fa-plus"></i></div>
 
 
     <div class="hobbies">
@@ -154,5 +210,4 @@ if(!empty($_POST)){
         document.forms[formname].submit();
     }
 </script>
-
 </html>

@@ -17,4 +17,16 @@ class HobbieController{
     function pegarMetas($id_hobbie){
         return $this->HobbieModel->pegarMetas($id_hobbie);
     }
+    function updateHobbie($id_hobbie, $proficiencia){
+        $this->HobbieModel->updateHobbie($id_hobbie,$proficiencia);
+    }
+    function updateMeta($id_meta, $completada){
+        $this->HobbieModel->updateMeta($id_meta,$completada);
+    }
+    function deletarHobbie($id_hobbie){
+        $this->HobbieModel->deletarHobbie($id_hobbie);
+    }
+    function deletarMeta($id_meta){
+        $this->HobbieModel->deletarMeta($id_meta);
+    }
 }
