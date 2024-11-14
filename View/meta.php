@@ -11,19 +11,21 @@
         
         $data_real = new DateTime($meta_prazo);
         $data_agora = new DateTime("now");
+        $timezone = DateInterval::createFromDateString("4 Hours");
+        $data_agora->sub($timezone);
         
         $diferenca = $data_agora->diff($data_real);
 
         $tempo = "em $diferenca->days dias";
         
         if($diferenca->days == 0){
-            $tempo = "HOJE!";
+            $tempo = "<b>HOJE!</b>";
         }
 
         $tempoagora = strtotime($data_agora->format("Y-m-d"));
         $tempoprazo =strtotime($data_real->format("Y-m-d"));
         if($tempoprazo < $tempoagora){
-            $tempo = "Já passou do prazo :(, foi $diferenca->days dias atrás... ";
+            $tempo = "<b>Já passou do prazo :(, foi $diferenca->days dias atrás... </b>";
         }
 
         $data_real_real = $data_real->format("d/m/Y");

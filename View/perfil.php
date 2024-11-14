@@ -6,12 +6,14 @@ if(isset($_COOKIE['id_user'])){
     if(!isset($user)){
         header("location: logout.php");
     }
-
-    echo "<img width='200' src='View/fotos_de_perfil/$user[nome_arquivo_fotoperfil]'>";
-    echo"<h4>$user[username]</h4>";
+    echo "<header>";
+    echo"<a href='index.php'>página inicial</a>";
     echo"<a href='hobbies.php'>ver hobbies</a>";
-    echo "<br>";
-    echo"<a href='usuario.php'>perfil</a>";
+    echo"<a href='usuario.php' class='fotoperfil'>";
+    echo"<figure><img src='View/fotos_de_perfil/$user[nome_arquivo_fotoperfil]'></figure>";
+    echo"<h4>$user[username]</h4>";
+    echo"</a>";
+    echo"</header>";
 }else{
     $user = null;
     echo"<a href='login.php'>entrar na conta</a>";

@@ -24,24 +24,36 @@ if(!empty($_POST)){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
     <title>Gerenciador de Hobbies</title>
 </head>
 <body>
+<header>
+        <div><img src="Captura_de_tela_2024-11-11_140326-removebg-preview (1).png" alt=""></div>
+        <h1>HOBBIES</h1>
+    </header>
+
+    <section>
+        <div class="login">
     <form method="POST">
         <input required type="text" name="username" placeholder="nome de usuário">
         <input required type="password" name="password" placeholder="senha">
         
-        <button type="submit">LogIn</button>
+        <button type="submit">Login</button>
     </form>
     <p>
-        Não tem uma conta? registre uma 
-    <a href="register.php">aqui!</a>
-    </p>
+
+    </div>
+        Não tem uma conta? registre uma </p>
+    <div class="outro"><button><a href="register.php">aqui!</a></button></div>
+    
+
 
     <?php
     if(isset($logged_in) && empty($logged_in)){
         echo "usuário ou senha estão errados, tente novamente!";
     }
     ?>
+    </section>
 </body>
 </html>

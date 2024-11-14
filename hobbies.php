@@ -65,7 +65,6 @@ if(!empty($_POST)){
         .container {
             display: flex;
             flex-direction: column;
-            border: 1px solid black;
             padding: 5px;
         }
 
@@ -88,6 +87,7 @@ if(!empty($_POST)){
         }
         form.hobbie{
             display: none;
+            margin-bottom: 1rem;
         }
         div:has(#criar_hobbie) i{
             font-size: 30px;
@@ -109,13 +109,17 @@ if(!empty($_POST)){
             position: absolute;
         }
         form.meta{
-            display: none;
+            height: 0px;
+            padding: 0;
+            overflow:hidden;
+            transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            align-items: stretch;
         }
         div:has(.criar_meta) i{
             font-size: 30px;
         }
         .hobbie:has(.criar_meta:checked) form.meta{
-            display: flex;
+            height:270px;
         }
         button:has(.delete){
             appearance: none;
@@ -136,8 +140,10 @@ if(!empty($_POST)){
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            margin:1rem 0;
         }
     </style>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
@@ -145,14 +151,15 @@ if(!empty($_POST)){
     include __DIR__ . "/View/perfil.php";
     ?>
 
+    <main>
     <h1>hobbies</h1><div class="add"><input type="checkbox" id="criar_hobbie"><i class="fa-solid fa-plus"></i></div>
 
 
     <div class="hobbies">
         <form method="POST" class="container hobbie">
             <h3>criar hobbie novo</h3>
-                <input type="text" name="nome" placeholder="nome do hobbie">
-                <textarea name="descricao" placeholder="descrição do hobbie"></textarea>
+                <input type="text" name="nome" placeholder="nome do hobbie" required>
+                <textarea name="descricao" placeholder="descrição do hobbie" required></textarea>
                 <label for="proficiencia">nivel de proficiencia</label>
                 <select name="proficiencia">
                     <option value="Curioso">Curioso</option>
@@ -161,7 +168,7 @@ if(!empty($_POST)){
                     <option value="Avançado">Avançado</option>
                 </select>
                 <input type="hidden" name="operacao" value="criar_hobbie">
-                <button type="submit">criar hobbie</button>
+                <button type="submit" class="submit">criar hobbie</button>
         </form>
 
         <?php
@@ -202,7 +209,7 @@ if(!empty($_POST)){
                 </div>
             </div>
         </div> -->
-        </f>
+        </main>
 </body>
 <script src="https://kit.fontawesome.com/e6ced328af.js" crossorigin="anonymous"></script>
 <script>
