@@ -25,12 +25,12 @@ $user = $Controller->listarContaPorID($id_user);
         <div class="texto">
             <img class="fotoperfildef" src="View/fotos_de_perfil/<?= $user['nome_arquivo_fotoperfil'] ?>"
                 alt="foto de perfil de <?= $user['username'] ?>">
-            <p><b>nome de usuário: </b><?= $user['username'] ?></p>
+            <p><b>Nome de usuário: </b><?= $user['username'] ?></p>
         </div>
         <div class="navnav">
-            <a href="mudar-foto-perfil.php">mudar foto de perfil</a>
-            <a href="mudar-senha.php">mudar senha</a>
-            <a href="logout.php">sair da conta</a>
+            <a href="mudar-foto-perfil.php">Mudar foto de perfil</a>
+            <a href="mudar-senha.php">Mudar senha</a>
+            <a href="logout.php">Sair da conta</a>
         </div>
     </div>
     

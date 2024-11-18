@@ -1,3 +1,3 @@
 # Organizador-de-hobbies
-Um site que organiza seus hobbies para voce poder ter melhor controle deles.
+Um site que organiza seus hobbies para você poder ter melhor controle deles.
 

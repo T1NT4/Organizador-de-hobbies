@@ -1,6 +1,6 @@
 <footer>
         <div class="full">
-            <p>todos direitos reservados ©2024 Hobbly Inc.</p>
+            <p>Todos direitos reservados ©2024 Hobbly Inc.</p>
         </div>
         <div class="full">
             <div>
