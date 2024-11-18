@@ -31,7 +31,8 @@ if(!empty($_POST)){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Hobbies</title>
+    <link rel="shortcut icon" href="Captura_de_tela_2024-11-11_140326-removebg-preview (1).png" type="image/png">
+    <title>Hobbly - Mudar senha</title>
 </head>
 <body>
     <form method="POST" enctype="multipart/form-data">
