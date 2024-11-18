@@ -10,10 +10,9 @@
     <?php
         
         $data_real = new DateTime($meta_prazo);
-        $data_agora = new DateTime("now");
-        $timezone = DateInterval::createFromDateString("4 Hours");
-        $data_agora->sub($timezone);
-        
+        $data_agora1 = new DateTime("now");
+        $data_agora = new DateTime($data_agora1->format("Y-m-d "."00:00:00.000000"));
+
         $diferenca = $data_agora->diff($data_real);
 
         $tempo = "em $diferenca->days dias";
@@ -33,6 +32,13 @@
 
         if($diferenca->days == 1){
             $tempo = str_replace("dias","dia",$tempo);
+        }
+
+        if($tempo == "em 1 dia"){
+            $tempo = "<strong>amanhã</strong>";
+        }
+        if($tempo == "em 2 dias"){
+            $tempo = "<strong>".$tempo."</strong>";
         }
 
         if($meta_completada == 'Sim'){

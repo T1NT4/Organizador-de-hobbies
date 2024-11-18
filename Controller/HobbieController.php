@@ -8,8 +8,8 @@ class HobbieController{
     function criarHobbie($id_user,$nome,$descricao,$proficiencia){
         $this->HobbieModel->criarHobbie($id_user,$nome,$descricao,$proficiencia);
     }
-    function criarMeta($nome,$descricao,$prazo,$completada){
-        $this->HobbieModel->criarMeta($nome,$descricao,$prazo,$completada);
+    function criarMeta($nome,$descricao,$prazo,$completada, $id_hobbie){
+        $this->HobbieModel->criarMeta($nome,$descricao,$prazo,$completada, $id_hobbie);
     }
     function pegarHobbies($id_user){
         return $this->HobbieModel->pegarHobbies($id_user);

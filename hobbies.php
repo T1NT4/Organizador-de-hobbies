@@ -27,7 +27,8 @@ if(!empty($_POST)){
     // criar meta para um hobby
     if(str_contains($_POST['operacao'],'criar_meta_')){
         $id_hobbie = str_replace('criar_meta_','', $_POST['operacao']);
-        $HobbieController->criarMeta($_POST['nome'],$_POST['descricao'],$_POST['prazo'],"Não");
+
+        $HobbieController->criarMeta($_POST['nome'],$_POST['descricao'],$_POST['prazo'],"Não",$id_hobbie);
         header("location: #");
     }
     // mudar status da meta
@@ -192,7 +193,6 @@ if(!empty($_POST)){
             $hobbie_proficiencia = $hobbie['proficiencia'];
             
             $hobbie_metas = $HobbieController->pegarMetas($id_hobbie);
-            
             include __DIR__.'/view/hobbie.php';
         }
         

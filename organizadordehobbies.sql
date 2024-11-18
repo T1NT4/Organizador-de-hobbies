@@ -35,14 +35,6 @@ CREATE TABLE `contas` (
   `nome_arquivo_fotoperfil` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `contas`
---
-
-INSERT INTO `contas` (`id_user`, `username`, `password`, `data_de_registro`, `nome_arquivo_fotoperfil`) VALUES
-(15, 't1nt4', '123', '2024-11-14 17:14:43', 't1nt4.png'),
-(16, 'Thiago', '123', '2024-11-14 17:15:23', 'Thiago.png');
-
 -- --------------------------------------------------------
 
 --
@@ -56,14 +48,6 @@ CREATE TABLE `hobbies` (
   `descricao` text NOT NULL,
   `proficiencia` enum('Curioso','Iniciante','Praticante','Avançado') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `hobbies`
---
-
-INSERT INTO `hobbies` (`id_hobbie`, `id_user`, `nome`, `descricao`, `proficiencia`) VALUES
-(0, 15, 'Thiago', '123', 'Praticante'),
-(0, 16, 'Um novo hobby', '123', 'Praticante');
 
 -- --------------------------------------------------------
 
@@ -81,14 +65,15 @@ CREATE TABLE `metas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Índices para tabelas despejadas
---
-
---
 -- Índices de tabela `contas`
 --
 ALTER TABLE `contas`
   ADD PRIMARY KEY (`id_user`);
+  
+-- Índices de tabela `hobbies`
+--
+ALTER TABLE `hobbies`
+  ADD PRIMARY KEY (`id_hobbie`);
 
 --
 -- Índices de tabela `metas`

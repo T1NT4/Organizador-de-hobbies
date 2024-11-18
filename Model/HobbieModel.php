@@ -10,10 +10,10 @@ class HobbieModel{
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$id_user,$nome,$descricao,$proficiencia]);
     }
-    function criarMeta($nome,$descricao,$prazo,$completada){
-        $sql = "INSERT INTO metas(nome,descricao,prazo,completada) VALUES (?,?,?,?)";
+    function criarMeta($nome,$descricao,$prazo,$completada, $id_hobbie){
+        $sql = "INSERT INTO metas(nome,descricao,prazo,completada, id_hobbie) VALUES (?,?,?,?,?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$nome,$descricao,$prazo,$completada]);
+        $stmt->execute([$nome,$descricao,$prazo,$completada,$id_hobbie]);
     }
     function pegarHobbies($id_user){
         $sql = "SELECT * FROM hobbies WHERE id_user = ?";

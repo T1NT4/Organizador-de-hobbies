@@ -187,6 +187,9 @@ main{
 b{
     color:crimson;
 }
+strong{
+    font-style: italic;
+}
 .metas-container{
     gap:1rem;
 }
