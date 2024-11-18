@@ -193,3 +193,8 @@ strong{
 .metas-container{
     gap:1rem;
 }
+h4{
+    margin: 0;
+    height: fit-content;
+    margin: auto 0;
+}

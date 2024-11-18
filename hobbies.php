@@ -171,9 +171,9 @@ if(!empty($_POST)){
 
     <div class="hobbies">
         <form method="POST" class="container hobbie">
-            <h3>criar hobbie novo</h3>
-                <input type="text" name="nome" placeholder="nome do hobbie" required>
-                <textarea name="descricao" placeholder="descrição do hobbie" required></textarea>
+            <h3>criar hobby novo</h3>
+                <input type="text" name="nome" placeholder="nome do hobby" required>
+                <textarea name="descricao" placeholder="descrição do hobby" required></textarea>
                 <label for="proficiencia">nivel de proficiencia</label>
                 <select name="proficiencia">
                     <option value="Curioso">Curioso</option>
@@ -182,7 +182,7 @@ if(!empty($_POST)){
                     <option value="Avançado">Avançado</option>
                 </select>
                 <input type="hidden" name="operacao" value="criar_hobbie">
-                <button type="submit" class="submit">criar hobbie</button>
+                <button type="submit" class="submit">criar hobby</button>
         </form>
 
         <?php
