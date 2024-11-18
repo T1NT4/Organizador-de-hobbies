@@ -20,9 +20,9 @@ if(isset($_COOKIE['id_user'])){
 
     echo"<header>";
     echo"<figure class='logo'><img src='Captura_de_tela_2024-11-11_140326-removebg-preview (1).png'><h1>HOBBLY</h1></figure>";
-    echo"<a href='login.php'>entrar na conta</a>";
+    echo"<a href='login.php'>Entrar na conta</a>";
     echo"<br>";
-    echo"<a href='register.php'>registar uma conta</a>";
+    echo"<a href='register.php'>Registar conta</a>";
     echo"</header>";
 }
 

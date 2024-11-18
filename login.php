@@ -34,7 +34,7 @@ if(!empty($_POST)){
         <h1>HOBBLY</h1>
     </header>
 
-    <section>
+    <section class="marginend">
         <div class="login">
     <form method="POST">
         <input required type="text" name="username" placeholder="nome de usuário">
@@ -56,5 +56,7 @@ if(!empty($_POST)){
     }
     ?>
     </section>
+
+    <?php include "View/footer.php" ?>
 </body>
 </html>

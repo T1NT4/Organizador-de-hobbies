@@ -40,10 +40,15 @@ if(!empty($_POST)){
     <title>Hobbly - Mudar foto de perfil</title>
 </head>
 <body>
-    <form method="POST" enctype="multipart/form-data">
+    <section class="marginend marginstart">
+        <h4>Atualizar a foto de perfil</h4>
+        <br>
+    <form class="login" method="POST" enctype="multipart/form-data">
     <input required type="password" name="password" placeholder="confirme a senha">
+    <div>
     <label for="foto-perfil">nova foto de perfil: </label>
     <input required type="file" name="foto-perfil" accept="image/jpg, image/jpeg, image/png">
+    </div>    
     
     <button type="submit">Atualizar foto de perfil</button>
     </form>
@@ -55,5 +60,8 @@ if(!empty($_POST)){
             echo $error_code;
         }
     ?>
+    </section>
+
+    <?php include "View/footer.php" ?>
 </body>
 </html>

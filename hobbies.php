@@ -166,7 +166,7 @@ if(!empty($_POST)){
     include __DIR__ . "/View/perfil.php";
     ?>
 
-    <main>
+    <main class="marginend">
     <h1>hobbies</h1><div class="add"><input type="checkbox" id="criar_hobbie"><i class="fa-solid fa-plus"></i></div>
 
 
@@ -224,6 +224,8 @@ if(!empty($_POST)){
             </div>
         </div> -->
         </main>
+
+    <?php include "View/footer.php" ?>
 </body>
 <script src="https://kit.fontawesome.com/e6ced328af.js" crossorigin="anonymous"></script>
 <script>

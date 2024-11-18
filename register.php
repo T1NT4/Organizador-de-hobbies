@@ -38,7 +38,7 @@ if (!empty($_POST)) {
         <div><img src="Captura_de_tela_2024-11-11_140326-removebg-preview (1).png" alt=""></div>
         <h1>HOBBLY</h1>
     </header>
-    <section>
+    <section class="marginend">
         <div class="login">
             <form method="POST" enctype="multipart/form-data">
                 <input required type="text" name="username" placeholder="nome de usuário">
@@ -74,6 +74,8 @@ if (!empty($_POST)) {
         <div class="outro"><button><a href="login.php">Faça login</a></button></div>
         </p>
     </section>
+
+    <?php include "View/footer.php" ?>
 </body>
 
 </html>
