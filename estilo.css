@@ -156,8 +156,8 @@ header{
     margin-left:1rem
 }
 .fotoperfil figure{
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 100%;
     overflow: hidden;
     margin:0;
@@ -197,4 +197,24 @@ h4{
     margin: 0;
     height: fit-content;
     margin: auto 0;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 1rem 0;
+    padding-right: 1rem;
+    margin-right: auto;
+    color:black;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+.logo img{
+    width: 100px;
+    height: 100px;
+}
+.logo h1{
+    padding:1rem;
+    margin: 0;
 }

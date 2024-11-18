@@ -30,7 +30,7 @@ if(!empty($_POST)){
 <body>
 <header class="middle">
         <div><img src="Captura_de_tela_2024-11-11_140326-removebg-preview (1).png" alt=""></div>
-        <h1>HOBBIES</h1>
+        <h1>HOBBLY</h1>
     </header>
 
     <section>

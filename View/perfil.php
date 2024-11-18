@@ -7,6 +7,7 @@ if(isset($_COOKIE['id_user'])){
         header("location: logout.php");
     }
     echo "<header>";
+    echo"<a class='logo' href='index.php'><img src='Captura_de_tela_2024-11-11_140326-removebg-preview (1).png'><h1>HOBBLY</h1></a>";
     echo"<a href='index.php'>página inicial</a>";
     echo"<a href='hobbies.php'>ver hobbies</a>";
     echo"<a href='usuario.php' class='fotoperfil'>";
@@ -16,9 +17,13 @@ if(isset($_COOKIE['id_user'])){
     echo"</header>";
 }else{
     $user = null;
+
+    echo"<header>";
+    echo"<figure class='logo'><img src='Captura_de_tela_2024-11-11_140326-removebg-preview (1).png'><h1>HOBBLY</h1></figure>";
     echo"<a href='login.php'>entrar na conta</a>";
     echo"<br>";
     echo"<a href='register.php'>registar uma conta</a>";
+    echo"</header>";
 }
 
 

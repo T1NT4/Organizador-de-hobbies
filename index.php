@@ -15,5 +15,6 @@ $Controller = new LoginController($pdo);
     <?php
         include __DIR__."/View/perfil.php";
     ?>
+
 </body>
 </html>
