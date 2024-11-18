@@ -28,7 +28,7 @@ if(!empty($_POST)){
     <title>Gerenciador de Hobbies</title>
 </head>
 <body>
-<header>
+<header class="middle">
         <div><img src="Captura_de_tela_2024-11-11_140326-removebg-preview (1).png" alt=""></div>
         <h1>HOBBIES</h1>
     </header>

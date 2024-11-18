@@ -40,7 +40,7 @@
         }
     ?>
     <p>data limite: <?=$data_real_real?> (<?=$tempo?>)</p>
-    <form id="meta-completada-<?=$meta_id?>" method="POST">
+    <form id="meta-completada-<?=$meta_id?>" method="POST" class="container vertical" style="justify-content:flex-start;">
         <label for="completada">meta completada?:</label>
         <input onchange="submitform('meta-completada-<?=$meta_id?>')" type="checkbox" name="completada" <?=$checked?>>
         <input type="hidden" name="operacao" value="mudar_completada_<?=$meta_id?>">

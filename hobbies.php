@@ -86,19 +86,28 @@ if(!empty($_POST)){
             transform: translateX(-15%) translateY(-10%);#?
         }
         form.hobbie{
-            display: none;
+            display: flex;
+            height: 0;
+            overflow: hidden;
+            padding: 0 10px;
+            transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
             margin-bottom: 1rem;
         }
         div:has(#criar_hobbie) i{
             font-size: 30px;
         }
         body:has(#criar_hobbie:checked) form.hobbie{
-            display: flex;
+            height: 336px;
         }
         textarea{
             resize: none;
         }
-
+        #criar_hobbie,.criar_meta{
+            transition: rotate 0.5s ease-out;
+        }
+        #criar_hobbie:checked,.criar_meta:checked{
+            rotate:90deg;
+        }
         .criar_meta{
             border:none;
             appearance: none;
@@ -114,12 +123,16 @@ if(!empty($_POST)){
             overflow:hidden;
             transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
             align-items: stretch;
+            padding:0 10px
+        }
+        form.meta input:first-child,form.meta input:last-child{
+            margin-top:10px;
         }
         div:has(.criar_meta) i{
             font-size: 30px;
         }
         .hobbie:has(.criar_meta:checked) form.meta{
-            height:270px;
+            height:280px;
         }
         button:has(.delete){
             appearance: none;

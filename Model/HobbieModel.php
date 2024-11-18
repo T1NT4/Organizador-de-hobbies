@@ -22,7 +22,7 @@ class HobbieModel{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     function pegarMetas($id_hobbie){
-        $sql = "SELECT * FROM metas WHERE id_hobbie = ? ORDER BY completada DESC ,prazo ASC";
+        $sql = "SELECT * FROM metas WHERE id_hobbie = ? ORDER BY completada DESC, prazo ASC";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$id_hobbie]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

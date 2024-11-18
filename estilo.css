@@ -33,9 +33,10 @@ header h1{
     border-radius: 25px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
-.hobbie{
+.hobbie, .meta{
     box-shadow: 0 0 10px black;
     border-radius: 20px;
+    padding:10px;
 }
 .hobbies{
     gap: 1rem;
@@ -51,13 +52,18 @@ form.hobbie{
 .login h1{
     text-align: center;
 }
-input:not(input[type='checkbox']), textarea,select{
+input:not(input[type='checkbox'], input[type='file']), textarea,select{
     padding:10px;
     margin-bottom: 15px;
     border-radius: 10px;
     border: 2px solid black
 }
-
+input[type='file']{
+    margin-bottom:10px;
+}
+.middle{
+    justify-content: center !important;
+}
 a{
     text-decoration: none;
     color: white;
@@ -139,6 +145,7 @@ header{
     justify-content: end;
     align-items: center;
     padding: 10px;
+    gap:1rem;
 }
 
 .fotoperfil{
@@ -146,7 +153,7 @@ header{
     flex-direction: row;
     align-items: center;
     gap:.5rem;
-    margin-left:2rem
+    margin-left:1rem
 }
 .fotoperfil figure{
     width: 100px;
@@ -179,4 +186,7 @@ main{
 }
 b{
     color:crimson;
+}
+.metas-container{
+    gap:1rem;
 }
